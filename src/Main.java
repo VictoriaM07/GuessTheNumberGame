@@ -14,11 +14,18 @@ public class Main {
         Random rnd = new Random();
         int hiddenNumber = rnd.nextInt(100);
         int attemptNumber = 0;
+        int maxAttempts = 10;
 
         while (true) {
             System.out.print("Input a number: ");
             int guessedNumber = sc.nextInt();
             attemptNumber++;
+            maxAttempts--;
+
+            if (maxAttempts == 0) {
+                System.out.println("Gave over");
+                break;
+            }
 
             if (guessedNumber < hiddenNumber) {
                 System.out.println("More");
