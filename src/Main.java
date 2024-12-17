@@ -13,17 +13,19 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Random rnd = new Random();
         int hiddenNumber = rnd.nextInt(100);
+        int attemptNumber = 0;
 
         while (true) {
             System.out.print("Input a number: ");
             int guessedNumber = sc.nextInt();
+            attemptNumber++;
 
             if (guessedNumber < hiddenNumber) {
                 System.out.println("More");
             } else if (guessedNumber > hiddenNumber) {
                 System.out.println("Less");
             } else {
-                System.out.println("You guessed");
+                System.out.println("You guessed by " + attemptNumber + " attempts");
                 break;
             }
         }
