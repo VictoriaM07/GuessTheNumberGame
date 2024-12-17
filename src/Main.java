@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -10,7 +11,8 @@ public class Main {
         // Daca numar == numarAscuns afiseaza "You guess" si opreste bucla
 
         Scanner sc = new Scanner(System.in);
-        int hiddenNumber = 75;
+        Random rnd = new Random();
+        int hiddenNumber = rnd.nextInt(100);
 
         while (true) {
             System.out.print("Input a number: ");
